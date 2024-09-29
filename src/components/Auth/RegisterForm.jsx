@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../redux/slices/authSlice";
 import { useDispatch } from "react-redux";
+import { setTasksForUser } from "../../redux/slices/taskSlice";
 
 const RegisterForm = () => {
   const [username, setUsername] = useState("");
@@ -25,6 +26,7 @@ const RegisterForm = () => {
       // Save the new user to localStorage
       users.push({ username, password });
       dispatch(login({ username }));
+      dispatch(setTasksForUser(username));
       localStorage.setItem("loggedInUser", username);
       localStorage.setItem("users", JSON.stringify(users));
 

@@ -1,10 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  tasks:
-    JSON.parse(
-      localStorage.getItem(`tasks_${localStorage.getItem("loggedInUser")}`)
-    ) || [],
+  tasks: [],
   filter: "all",
 };
 
@@ -50,9 +47,26 @@ const taskSlice = createSlice({
     setTaskFilter(state, action) {
       state.filter = action.payload; // Update the filter value
     },
+    setTasksForUser(state, action) {
+      const tasks = JSON.parse(
+        localStorage.getItem(`tasks_${action.payload}`)
+      ) || [];
+      state.tasks = tasks; // Set tasks specific to the logged-in user
+    },
+    resetTasks(state) {
+      state.tasks = []; // Clear tasks on logout
+    },
   },
 });
 
-export const { addTask, updateTask, removeTask, markTaskComplete, setTaskFilter } =
-  taskSlice.actions;
+export const { 
+  addTask, 
+  updateTask, 
+  removeTask, 
+  markTaskComplete, 
+  setTaskFilter, 
+  setTasksForUser, 
+  resetTasks 
+} = taskSlice.actions;
+
 export default taskSlice.reducer;
