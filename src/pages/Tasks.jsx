@@ -7,7 +7,7 @@ import layoutOne from "../components/Layouts/layoutOne";
 import { logout } from "../redux/slices/authSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setTasksForUser } from "../redux/slices/taskSlice";
+import { resetTasks } from "../redux/slices/taskSlice";
 
 const Tasks = () => {
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ const Tasks = () => {
   const handleLogout = () => {
     // Handle logout logic here
     dispatch(logout());
-    dispatch(setTasksForUser(username));
+    dispatch(resetTasks());
     navigate("/login");
   };
   return (
