@@ -21,4 +21,18 @@
       overflow-y: scroll;
     }
   }
+
+  .task-filter {
+    margin: 20px 0;
+
+    button {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 14px;
+      font-weight: 500;
+      color: $theme-text-two;
+      cursor: pointer;
+    }
+  }
 }

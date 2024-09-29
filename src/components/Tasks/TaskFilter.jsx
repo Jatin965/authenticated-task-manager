@@ -12,7 +12,7 @@ const TaskFilter = () => {
   };
 
   return (
-    <div>
+    <div className="task-filter">
       <button
         onClick={() => handleFilterChange("all")}
         style={{ fontWeight: filter === "all" ? "bold" : "normal" }}

@@ -24,12 +24,12 @@ const RegisterForm = () => {
     } else {
       // Save the new user to localStorage
       users.push({ username, password });
-      dispatch(login({ username }));
-      localStorage.setItem("loggedInUser", username);
+      //dispatch(login({ username }));
+      //localStorage.setItem("loggedInUser", username);
       localStorage.setItem("users", JSON.stringify(users));
 
       // Redirect to login page
-      navigate("/login");
+      navigate("/tasks");
     }
   };
 

@@ -5,8 +5,10 @@ import TaskFilter from "../components/Tasks/TaskFilter";
 
 import layoutOne from "../components/Layouts/layoutOne";
 import { logout } from "../redux/slices/authSlice";
+import { useDispatch } from "react-redux";
 
 const Tasks = () => {
+  const dispatch = useDispatch();
   const handleLogout = () => {
     // Handle logout logic here
     dispatch(logout());
