@@ -1,13 +1,14 @@
 import React from "react";
 import LoginForm from "../components/Auth/LoginForm";
+import layoutOne from "../components/Layouts/layoutOne";
 
 const Login = () => {
   return (
-    <div>
-      <h2>Login</h2>
+    <div className="login">
+      <h2>Log In To Your Account</h2>
       <LoginForm />
     </div>
   );
 };
 
-export default Login;
+export default layoutOne(Login);

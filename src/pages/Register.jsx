@@ -1,5 +1,6 @@
-import React from 'react';
-import RegisterForm from '../components/Auth/RegisterForm';
+import React from "react";
+import RegisterForm from "../components/Auth/RegisterForm";
+import layoutOne from "../components/Layouts/layoutOne";
 
 const Register = () => {
   return (
@@ -10,4 +11,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default layoutOne(Register);

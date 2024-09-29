@@ -1,0 +1,109 @@
+.layout {
+  max-width: 1440px;
+  margin: auto;
+  .content {
+    .page {
+      position: relative;
+      position: relative;
+      overflow: hidden;
+      border-radius: 13.347px;
+      margin: 40px 100px;
+      min-height: 670px;
+      background: #fff;
+      box-shadow: 0px 1.112px 2.224px 0px rgba(28, 28, 28, 0.24),
+        0px 0px 0px 1.112px rgba(28, 28, 28, 0.08);
+      z-index: 0;
+      .bg_circle-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 50px;
+        position: absolute;
+
+        z-index: -1;
+        opacity: 0.2;
+        -moz-opacity: 0.07;
+
+        & > .circle {
+          border-radius: 325px;
+
+          flex: 1 1 30%;
+          overflow: visible;
+        }
+        .circle-one {
+          filter: blur(50px);
+          position: absolute;
+          width: 550px;
+          height: 700px;
+          left: 0rem;
+          top: 10px;
+          border-radius: 100%;
+
+          background: #bde6fc;
+        }
+        .circle-two {
+          filter: blur(120px);
+          position: absolute;
+          right: 0.75rem;
+          left: 62.75rem;
+          top: 30rem;
+          width: 200px;
+          height: 325px;
+
+          background: #7f00bb;
+        }
+        .circle-three {
+          filter: blur(180px);
+          position: absolute;
+          top: 30rem;
+          left: 0rem;
+          width: 220px;
+          height: 225px;
+
+          background: #7f00bb;
+        }
+      }
+
+      .page-content {
+        padding: 30px 40px;
+        .Header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .logo {
+            max-width: 120px;
+            cursor: pointer;
+          }
+          .buttons {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            color: $theme-text-two;
+            border-radius: 8px;
+          }
+        }
+        footer {
+          position: fixed;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 2px 20px;
+          border-top: 1px solid rgba(33, 33, 33, 0.1);
+          background: #f9fafc;
+
+          .footer-btn {
+            //border-bottom: 1px solid !important;
+            border-radius: 0 !important;
+            padding: 0px 4px !important;
+            text-decoration: underline;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+  }
+}
