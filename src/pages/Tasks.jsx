@@ -6,12 +6,15 @@ import TaskFilter from "../components/Tasks/TaskFilter";
 import layoutOne from "../components/Layouts/layoutOne";
 import { logout } from "../redux/slices/authSlice";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Tasks = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleLogout = () => {
     // Handle logout logic here
     dispatch(logout());
+    navigate("/login");
   };
   return (
     <div className="tasks">
