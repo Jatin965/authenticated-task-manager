@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TaskForm from "../components/Tasks/TaskForm";
 import TaskList from "../components/Tasks/TaskList";
 import TaskFilter from "../components/Tasks/TaskFilter";
@@ -12,8 +12,15 @@ import { resetTasks } from "../redux/slices/taskSlice";
 const Tasks = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    if (!loggedInUser) {
+      navigate("/login");
+    }
+  }, [navigate]);
+
   const handleLogout = () => {
-    // Handle logout logic here
     dispatch(logout());
     dispatch(resetTasks());
     navigate("/login");

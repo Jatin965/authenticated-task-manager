@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../redux/slices/authSlice";
 import { useDispatch } from "react-redux";
@@ -10,6 +10,13 @@ const RegisterForm = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    if (loggedInUser) {
+      navigate("/tasks");
+    }
+  }, [navigate]);
 
   const handleRegister = (e) => {
     e.preventDefault();

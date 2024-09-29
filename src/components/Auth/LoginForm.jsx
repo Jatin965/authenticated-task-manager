@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/slices/authSlice";
 import { Link, useNavigate } from "react-router-dom";
@@ -11,13 +11,18 @@ const LoginForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    if (loggedInUser) {
+      navigate("/tasks");
+    }
+  }, [navigate]);
+
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // Fetch users from localStorage
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
-    // Find the user
     const user = users.find(
       (user) => user.username === username && user.password === password
     );
@@ -25,7 +30,7 @@ const LoginForm = () => {
     if (user) {
       dispatch(login({ username }));
       dispatch(setTasksForUser(username));
-      localStorage.setItem("loggedInUser", username); // Store the logged-in user
+      localStorage.setItem("loggedInUser", username);
       navigate("/tasks");
     } else {
       setError("Invalid credentials. Please try again.");
