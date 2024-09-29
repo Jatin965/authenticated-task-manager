@@ -29,7 +29,7 @@ const RegisterForm = () => {
       localStorage.setItem("users", JSON.stringify(users));
 
       // Redirect to login page
-      navigate("/tasks");
+      navigate("/login");
     }
   };
 
