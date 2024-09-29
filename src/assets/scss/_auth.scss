@@ -1,4 +1,41 @@
-.login {
-  text-align: center;
+.login,
+.register {
+  width: 20rem;
+  margin: 0 auto;
   margin-top: 20vh;
+
+  form {
+    .field {
+      margin-bottom: 16px;
+      label {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 14px;
+        font-weight: 500;
+        color: $theme-text-two;
+      }
+      input {
+        width: calc(100% - 24px);
+        padding: 12px;
+        border: 1px solid rgba(33, 33, 33, 0.1);
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        color: $theme-text-two;
+      }
+    }
+    button {
+      width: 100%;
+      text-align: center;
+      padding: 12px 24px;
+      background-color: $theme-primary;
+      border: none;
+      outline: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: $theme-white;
+      cursor: pointer;
+    }
+  }
 }

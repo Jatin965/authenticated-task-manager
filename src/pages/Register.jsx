@@ -4,7 +4,7 @@ import layoutOne from "../components/Layouts/layoutOne";
 
 const Register = () => {
   return (
-    <div>
+    <div className="register">
       <h2>Register</h2>
       <RegisterForm />
     </div>
