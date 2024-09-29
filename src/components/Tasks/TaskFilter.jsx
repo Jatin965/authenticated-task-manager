@@ -15,19 +15,19 @@ const TaskFilter = () => {
     <div className="task-filter">
       <button
         onClick={() => handleFilterChange("all")}
-        style={{ fontWeight: filter === "all" ? "bold" : "normal" }}
+        className={filter === "all" ? "active" : ""}
       >
         All Tasks
       </button>
       <button
         onClick={() => handleFilterChange("completed")}
-        style={{ fontWeight: filter === "completed" ? "bold" : "normal" }}
+        className={filter === "completed" ? "active" : ""}
       >
         Completed
       </button>
       <button
         onClick={() => handleFilterChange("incomplete")}
-        style={{ fontWeight: filter === "incomplete" ? "bold" : "normal" }}
+        className={filter === "incomplete" ? "active" : ""}
       >
         Incomplete
       </button>
