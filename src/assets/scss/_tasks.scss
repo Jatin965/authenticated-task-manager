@@ -1,4 +1,12 @@
 .tasks {
   max-width: 1240px;
   margin: auto;
+
+  .task-list {
+    .task {
+      background: $theme-white;
+      padding: 12px;
+      border-radius: 8px;
+    }
+  }
 }
