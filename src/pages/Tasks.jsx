@@ -3,10 +3,16 @@ import TaskForm from "../components/Tasks/TaskForm";
 import TaskList from "../components/Tasks/TaskList";
 import TaskFilter from "../components/Tasks/TaskFilter";
 
+import layoutOne from "../components/Layouts/layoutOne";
+
 const Tasks = () => {
   return (
-    <div>
-      <h1>Task Management</h1>
+    <div className="tasks">
+      <div className="row">
+        <h2>Task Management</h2>
+        <button>Logout</button>
+
+      </div>
       <TaskForm />
       <TaskFilter />
       <TaskList />
@@ -14,4 +20,4 @@ const Tasks = () => {
   );
 };
 
-export default Tasks;
+export default layoutOne(Tasks);

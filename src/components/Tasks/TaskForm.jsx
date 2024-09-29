@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid"; // For generating unique task IDs
 
 const TaskForm = () => {
   const [taskTitle, setTaskTitle] = useState("");
+  const [isAdding, setIsAdding] = useState(false);
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -21,7 +22,7 @@ const TaskForm = () => {
     }
   };
 
-  return (
+  return isAdding ? (
     <form onSubmit={handleSubmit}>
       <input
         type="text"
@@ -31,7 +32,10 @@ const TaskForm = () => {
         required
       />
       <button type="submit">Add Task</button>
+      <button onClick={() => setIsAdding(false)}>Cancel</button>
     </form>
+  ) : (
+    <button onClick={() => setIsAdding(true)}>Add New Task</button>
   );
 };
 
