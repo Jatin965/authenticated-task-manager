@@ -16,7 +16,7 @@ const TaskItem = ({ task }) => {
   };
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+    <div className='task' style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
       {isEditing ? (
         <TaskEditForm task={task} setIsEditing={setIsEditing} />
       ) : (

@@ -17,7 +17,7 @@ const TaskList = () => {
   });
 
   return (
-    <div>
+    <div className='task-list'>
       {filteredTasks.length > 0 ? (
         filteredTasks.map((task) => <TaskItem key={task.id} task={task} />)
       ) : (
