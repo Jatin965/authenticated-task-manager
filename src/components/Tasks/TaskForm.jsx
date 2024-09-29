@@ -19,11 +19,12 @@ const TaskForm = () => {
         })
       );
       setTaskTitle("");
+      setIsAdding(false);
     }
   };
 
   return isAdding ? (
-    <form onSubmit={handleSubmit}>
+    <form className="task-add" onSubmit={handleSubmit}>
       <input
         type="text"
         value={taskTitle}
@@ -35,7 +36,7 @@ const TaskForm = () => {
       <button onClick={() => setIsAdding(false)}>Cancel</button>
     </form>
   ) : (
-    <button onClick={() => setIsAdding(true)}>Add New Task</button>
+    <button className="add-btn" onClick={() => setIsAdding(true)}>Add New Task</button>
   );
 };
 

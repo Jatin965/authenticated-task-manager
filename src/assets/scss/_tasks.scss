@@ -21,6 +21,40 @@
     }
   }
 
+  .add-btn {
+    background: $theme-primary;
+    color: $theme-white;
+    border: none;
+    padding: 13px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .task-add {
+    display: flex;
+    gap: 10px;
+    input {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid rgba(33, 33, 33, 0.1);
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: $theme-text-two;
+    }
+    button {
+      cursor: pointer;
+
+      &[type="submit"] {
+        background: $theme-primary;
+        color: $theme-white;
+        border: none;
+        padding: 13px 18px;
+        border-radius: 6px;
+      }
+    }
+  }
+
   .task-list {
     display: flex;
     gap: 20px;
@@ -49,7 +83,7 @@
           color: $theme-text-two;
         }
 
-        .btn-group{
+        .btn-group {
           display: flex;
           justify-content: space-between;
         }
